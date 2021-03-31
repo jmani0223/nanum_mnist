@@ -13,4 +13,9 @@ def cnn_model(num_classes):
         keras.layers.Dropout(0.5),
         keras.layers.Dense(num_classes, activation='softmax'),
     ])
+    '''
+    model.compile(optimizer='adam',
+                  loss='sparse_categorical_crossentropy',
+                  metrics=['accuracy'])
+    history = model.fit(x_train, y_train, batch_size = batch_num, epochs=5)'''
     return model

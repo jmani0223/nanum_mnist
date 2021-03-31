@@ -1,7 +1,7 @@
 import os
 import cv2
 import numpy as np
-
+import imgaug.augmenters as iaa
 def rename(path_dir):
     dir_list = os.listdir(path_dir)
     for dir in dir_list:
@@ -32,7 +32,14 @@ def dataload(path_dir):
     Y = np.array(Y)
     return X, Y
 
+def augmentation(img):
+    seq = iaa.Sequential([
+        iaa.Crop(px=(0, 16)),  # crop images from each side by 0 to 16px (randomly chosen)
+        iaa.Fliplr(0.5),  # horizontally flip 50% of the images
+        iaa.GaussianBlur(sigma=(0, 3.0))  # blur images with a sigma of 0 to 3.0
+    ])
 
+    return
 def hangle_to_num(path_dir):
     dir_list = os.listdir(path_dir)
     for dir in dir_list:

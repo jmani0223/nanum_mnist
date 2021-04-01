@@ -20,7 +20,7 @@ for uni in tqdm(Syllables):
 
     unicodeChars = chr(int(uni, 16))
 
-    path = "./img/" + unicodeChars
+    path = "./ttt/" + unicodeChars
 
     os.makedirs(path, exist_ok=True)
 
@@ -29,7 +29,7 @@ for uni in tqdm(Syllables):
 
         x, y = font.getsize(unicodeChars)
 
-        theImage = Image.new('RGB', (x + 3, y + 3), color='white')
+        theImage = Image.new('RGB', (x + 5, y + 3), color='white')
 
         theDrawPad = ImageDraw.Draw(theImage)
 

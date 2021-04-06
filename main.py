@@ -10,11 +10,10 @@ import matplotlib.pyplot as plt
 from sklearn.model_selection import cross_val_score
 num_classes = 10
 batch_num = 32
-
 X, Y = load.dataload('./img')
-
+'''
 train_X, x_test, train_Y, y_test = train_test_split(X, Y, test_size=0.3, shuffle=True, random_state=222)
-x_trai, x_test, train_Y, y_test = train_test_split(X, Y, test_size=0.3, shuffle=True, random_state=222)
+x_train, x_test, train_Y, y_test = train_test_split(X, Y, test_size=0.3, shuffle=True, random_state=222)
 skf = StratifiedKFold(n_splits=2, shuffle=True, random_state=222)
 n_iter = 0
 cv_accuracy = []
@@ -55,3 +54,4 @@ plt.plot(hist.history['accuracy'])
 plt.show()
 test_loss, test_acc = model.evaluate(x_test, y_test, verbose=2)
 print(test_acc)
+'''
